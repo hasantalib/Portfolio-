@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            overflow: hidden; /* Hide overflow for opening animation */
+        }
+        #wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        #header {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            border-bottom: 5px solid #34495e;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 15px; /* Add rounded corners */
+            margin-bottom: 20px;
+            transform: perspective(1000px) rotateX(10deg); /* 3D effect */
+        }
+        #header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        #header p {
+            font-size: 1.2em;
+        }
+        #nav {
+            background-color: #34495e;
+            color: #ecf0f1;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+            border-radius: 10px;
+        }
+        #nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        #nav ul li {
+            margin: 0 15px;
+        }
+        #nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: color 0.3s, transform 0.3s; /* Add transform for hover effect */
+        }
+        #nav ul li a.active, #nav ul li a:hover {
+            color: #1abc9c;
+            transform: scale(1.1); /* Scale up on hover */
+        }
+        .section {
+            margin-bottom: 40px;
+            background-color: #2c3e50;
+            border-radius: 15px; /* More rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            animation: sectionFadeIn 1s ease-out forwards;
+        }
+        @keyframes sectionFadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .section h2 {
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 10px;
+            color: #ecf0f1;
+        }
+        .experience-item, .education-item, .certification-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-left: 4px solid #1abc9c;
+            background-color: #34495e;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s; /* Add transform for hover effect */
+        }
+        .experience-item:hover, .education-item:hover, .certification-item:hover {
+            background-color: #2c3e50;
+            transform: scale(1.05); /* Slightly scale up on hover */
+        }
+        .button {
+            display: inline-block;
+            background-color: #1abc9c;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s; /* Add transform for hover effect */
+        }
+        .button:hover {
+            background-color: #16a085;
+            transform: scale(1.1); /* Scale up on hover */
+        }
+        #cta {
+            background-color: #2c3e50;
+            border: 2px solid #1abc9c;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out forwards;
+        }
+        #cta h2 {
+            margin-top: 0;
+            color: #1abc9c;
+        }
+        footer {
+            background-color: #34495e;
+            color: #ecf0f1;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        footer .icons {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        footer .icons li {
+            margin: 0 10px;
+        }
+        footer .icons a {
+            color: #ecf0f1;
+            font-size: 1.5em;
+            transition: color 0.3s, transform 0.3s; /* Add transform for hover effect */
+        }
+        footer .icons a:hover {
+            color: #1abc9c;
+            transform: scale(1.1); /* Scale up on hover */
+        }
+        .copyright {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <h1>Hi! My name's Hasan Talib</h1>
+            <p>Software Developer & Data Scientist</p>
+        </header>
+
+        <nav id="nav">
+            <ul>
+                <li><a href="#intro" class="active">Introduction</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+            </ul>
+        </nav>
+
+        <div id="main">
+            <section id="intro" class="section main">
+                <h2>Introduction</h2>
+                <p>Welcome to my portfolio! I'm a passionate software developer and data scientist with experience in machine learning, web development, and data analysis.</p>
+            </section>
+
+            <section id="experience" class="section main">
+                <h2>Experience</h2>
+                <div class="experience-item">
+                    <h3>Research Assistant</h3>
+                    <p>White House Office of Science and Technology Policy · Apprenticeship</p>
+                    <p>Jun 2024 - Present · 2 mos</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Research Intern</h3>
+                    <p>Conservation X Labs · Part-time</p>
+                    <p>May 2024 - Jul 2024 · 3 mos</p>
+                    <p>Assisted on the development of a machine learning pipeline to analyze Landsat satellite imagery of urban green spaces near Washington, D.C. Implemented Sentinel-2 cloud mask algorithm and utilized TensorFlow with customized ResNet-50 architecture.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Private Software Consultant</h3>
+                    <p>Self-Employed · Self-employed</p>
+                    <p>Aug 2023 - May 2024 · 10 mos</p>
+                    <p>Provided software consulting services to 12 small companies and startups in the D.C. and Maryland area. Developed custom software solutions and implemented data analytics tools.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Research Intern</h3>
+                    <p>Harvard University · Internship</p>
+                    <p>May 2023 - Nov 2023 · 7 mos</p>
+                    <p>Conducted computer vision and natural language processing research using PyTorch. Collaborated with PhD students and Post-Doctoral researchers on large-scale image datasets and high-performance computing clusters.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Quantitative Research Intern</h3>
+                    <p>TD Ameritrade · Internship</p>
+                    <p>Nov 2021 - Feb 2022 · 4 mos</p>
+                    <p>Developed and backtested quantitative trading strategies using Python, focusing on statistical arbitrage and momentum-based approaches. Analyzed financial datasets and optimized risk management models.</p>
+                </div>
+            </section>
+
+            <section id="education" class="section main">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Bachelor's degree, Computer Science & Electrical Engineering</h3>
+                    <p>Transferring - Expected graduation: Jun 2028</p>
+                </div>
+                <div class="education-item">
+                    <h3>King Abdullah Academy</h3>
+                    <p>Graduated: May 2024</p>
+                </div>
+                <div class="education-item">
+                    <h3>Virginia Tech Academy of Data Science</h3>
+                    <p>Attended: Jul 2023 - Jul 2023 · 1 mo</p>
+                </div>
+            </section>
+
+            <section id="certifications" class="section main">
+                <h2>Certifications & Achievements</h2>
+                <div class="certification-item">
+					<h3>AWS Certified Machine Learning - Specialty</h3>
+                    <p>Issued by Amazon Web Services (AWS) · Jan 2022</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Google Project Management: Professional Certification</h3>
+                    <p>Issued by Google</p>
+                </div>
+                <div class="certification-item">
+                    <h3>IBM Full Stack Software Developer Professional Certificate</h3>
+                    <p>Issued by IBM</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Quantitative Finance & Data Modeling</h3>
+                    <p>Wharton Online</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Ranked 1st/616 - Google, Predicting AI Model Runtime</h3>
+                    <p>Issued by Google · Sep 2023</p>
+                </div>
+                <div class="certification-item">
+                    <h3>1st Place - Computational Physics for Applied Dynamics Competition</h3>
+                    <p>Issued by Virginia Tech · Jul 2023</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Ranked 7th/1188 - NeurIPS 2023 - Machine Unlearning</h3>
+                    <p>Issued by Google · Feb 2023</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Ranked 9th/1,839 - OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction</h3>
+                    <p>Issued by Stanford University · Dec 2022</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Bank of America Student Leader</h3>
+                    <p>Issued by Bank of America</p>
+                </div>
+            </section>
+        </div>
+
+        <section id="cta" class="section main special">
+            <h2>Get in touch</h2>
+            <p>Interested in working together? Let's connect!</p>
+            <ul class="actions">
+                <li><a href="#" class="button primary" id="contact-btn">Contact Me</a></li>
+            </ul>
+        </section>
+
+        <footer id="footer">
+            <section>
+                <h2>Social</h2>
+                <ul class="icons">
+                    <li><a href="https://www.instagram.com/hsn_htlb" class="icon brands fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+                    <li><a href="https://github.com/hasantalib" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/hasan-talib1" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                </ul>
+            </section>
+            <p class="copyright">&copy; Hasan Talib.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('#nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active navigation highlight
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('#nav a').forEach(li => {
+                li.classList.remove('active');
+                if (li.getAttribute('href').slice(1) === current) {
+                    li.classList.add('active');
+                }
+            });
+        });
+
+        // Contact button click event
+        document.getElementById('contact-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! Please email me at hasan_talib@icloud.com');
+        });
+
+        // Opening animation
+        window.onload = () => {
+            document.body.style.overflow = 'auto'; // Restore overflow after animation
+        };
+    </script>
+</body>
+</html>
